@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaring variables
+            int destination, loop = 8;
+
+            //Creating Stack
+            Stack stock = new Stack();
+
+            //Posting menu screen using method
+            question(); 
+            
+            //Getting user input 
+            Console.Write("\nEnter a number: ");
+            destination = int.Parse(Console.ReadLine());
+
+            //Never ending loop 
+            while (loop == 8)
+            {
+                /* These block of code may add value to the Stack */
+                if (destination == 1)
+                {
+                    Console.Write("\nEnter value: ");
+                    stock.Push(Console.ReadLine()); Console.Clear(); 
+                    question(); Console.Write("\nEnter a number: ");
+                    destination = int.Parse(Console.ReadLine());
+                }
+
+                //These block of codes can count and remove the value from the Stack
+                if (destination == 2)
+                {
+                    //Run a code and ignore its error
+                    try
+                    {
+                        object any = stock.Pop();
+                        Console.Write("\nThe first element to pop: " + any);
+                    }
+                    
+                    //The desired outcome when the try code meets an error
+                    catch (Exception) { Console.Write("\nNo element to pop: "); }
+                    Console.ReadLine(); Console.Clear();
+                    question(); Console.Write("\nEnter a number: ");
+                    destination = int.Parse(Console.ReadLine());
+                }
+
+                //These block of codes can count and see the 1st value that has been enter
+                if (destination == 3)
+                {
+                    try
+                    {
+                        object any = stock.Peek();
+                        Console.Write("\nThe first element: " + any);
+                    }
+                    catch (Exception) { Console.Write("\nNo element to Peak "); }
+                    Console.ReadLine(); Console.Clear();
+                    question(); Console.Write("\nEnter a number: ");
+                    destination = int.Parse(Console.ReadLine());
+                }
+
+                //Count the total number of value in Stack
+                if (destination == 4)
+                {
+                    object any = stock.Count;
+                    Console.Write("\nTotal number of element: " + any);
+                    Console.ReadLine(); Console.Clear();
+                    question(); Console.Write("\nEnter a number: ");
+                    destination = int.Parse(Console.ReadLine());
+                }
+
+                //Display value base on the time they input
+                if (destination == 5)
+                {
+                    int count = 1;
+                    foreach (var x in stock) { Console.WriteLine("Element #{0}: {1}", count, x); count++; }
+                    Console.ReadLine(); Console.Clear();
+                    question(); Console.Write("\nEnter a number: ");
+                    destination = int.Parse(Console.ReadLine());
+                }
+
+                //Clear all of values in Stack
+                if (destination == 6)
+                {
+                    stock.Clear(); Console.Clear();
+                    question(); Console.Write("\nEnter a number: ");
+                    destination = int.Parse(Console.ReadLine());
+                }
+
+                //Asking for validation in exiting the loop program
+                if (destination == 7)
+                {
+                    Console.Write("\n\nAre you sure?(Y/N)");
+                    char exit = Convert.ToChar(Console.ReadLine().ToLower());
+                    
+                    //Forcing to exit the program
+                    if (exit == 'y') Environment.Exit(0);
+                    else
+                    {
+                        Console.Clear(); question(); Console.Write("\nEnter a number: ");
+                        destination = int.Parse(Console.ReadLine());
+                    }
+                }
+
+                //Out of range input 
+                if (destination <= 0 || destination >= 8)
+                {
+                    Console.WriteLine("\n\nWrong Input!!");
+                    Console.Write("\nDo you want to Quit?(Y/N): ");
+                    char Wexit = Convert.ToChar(Console.ReadLine().ToLower());
+                    if (Wexit == 'y') Environment.Exit(0);
+                    else
+                    {
+                        Console.Clear();
+                        question(); Console.Write("\nEnter a number: ");
+                        destination = int.Parse(Console.ReadLine());
+                    }
+                }
+            }
+            Console.ReadKey(true);
+        }
+
+        //Void method to display menu option
+        static void question()
+        {
+            Console.WriteLine("Queue\n");
+            Console.WriteLine("Press - 1 Enqueue"); Console.WriteLine("Press - 2 Dequeue");
+            Console.WriteLine("Press - 3 Peak"); Console.WriteLine("Press - 4 No. of Elements");
+            Console.WriteLine("Press - 5 View all"); Console.WriteLine("Press - 6 Clear");
+            Console.WriteLine("Press - 7 Exit");
+        }    
+    }
+}

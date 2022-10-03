@@ -1,0 +1,16 @@
+﻿using System;
+
+namespace modified_roman_to_numeral
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int input;
+            Console.Write("Entera number: ");           
+            input = int.Parse(Console.ReadLine());
+            Console.Write(Class1.NumtoRomannumeral(input));
+            Console.ReadKey(true);
+        }
+    }
+}

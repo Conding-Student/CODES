@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    struct BoardMaker 
+    {
+        public String color;
+        public int inkcontent;
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BoardMaker bm;
+
+            bm.color = "Black";
+            bm.inkcontent = 20;
+
+            
+            int loop = 9;
+            do
+            {
+                menu();
+                Console.Write("Enter a number: ");
+                int number = int.Parse(Console.ReadLine());
+                Console.Clear();
+                if (number == 1)
+                {
+                    Console.Write("===BoardMaker info===\n" + "Current inkcolor: {0} ", bm.color);
+                    Console.Write("\nCurrent inkcontent: {0}", bm.inkcontent + "\nPress any key to return to MENU");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                if (number == 2 && bm.inkcontent == 0)
+                {
+                    Console.Clear();
+                    Console.Write("Enter new color: ");
+                    bm.color = Console.ReadLine();
+                    Console.Write("Color has been changed!!" + "\nPress any key to return to MENU");
+                    Console.ReadLine(); Console.Clear();
+                }
+                if (number == 2 && bm.inkcontent != 0)
+                {
+                    Console.Clear();
+                    Console.Write("You cannot change the color because ink is not yet empty." +
+                                  "\nPress any key to go back to MENU...\n");
+                    Console.ReadLine(); Console.Clear();
+                }
+                if (number == 3)
+                {
+                    Console.Clear();
+                    bm.inkcontent = 20;
+                    Console.Write("BoardMaker has been successfully refilled." + "\nPress any key to return to MENU");
+                    Console.ReadLine(); Console.Clear();
+                }
+                if (number == 4 && bm.inkcontent != 0)
+                {
+                    Console.Clear();
+                    bm.inkcontent -= 5;
+                    Console.WriteLine("Writing...");
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Write("5ml has been consumed\n" + "Remaining inkcontent: {0}", bm.inkcontent +
+                                  "\nPress any key to return to MENU");
+                    Console.ReadLine(); Console.Clear();
+                }
+                else if (number == 4 && bm.inkcontent == 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Unable to write because ink is empty...Please Refill" + "\nPress any key to return to MENU");
+                    Console.ReadLine(); Console.Clear();
+                }
+                if (number == 5)
+                {
+                    Console.WriteLine("Press any key to exit program!!!");
+                    Console.ReadLine(); Environment.Exit(0);
+                }
+
+            } while (loop == 9);
+            Console.ReadKey(true);
+        }
+
+        static void menu()
+        {
+            Console.Write("===Main Menu===\n" + "1. Display info\n" + "2. Change Color\n" +
+                          "3. Refill\n" + "4. Write\n" + "5. Exit program\n");            
+        }
+
+        
+    }
+}

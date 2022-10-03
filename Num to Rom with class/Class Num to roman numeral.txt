@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace modified_roman_to_numeral
+{
+    class Class1
+    {
+        public static string NumtoRomannumeral(int number)
+        {
+            int piece;
+
+            if (number < 0 || number > 3999) 
+            { 
+                return ("Out of range"); 
+            }
+            if (number >= 1000)
+            {
+                piece = number - 1000;
+                return "M" + NumtoRomannumeral(piece);             
+            }
+            if (number >= 900)
+            {
+                piece = number - 900;
+                return "CM" + NumtoRomannumeral(piece);
+            }
+            if (number >= 500)
+            {
+                piece = number - 500;
+                return "D" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 400) 
+            {
+                piece = number - 400;
+                return "CD" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 100) 
+            {
+                piece = number - 100;
+                return "C" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 90) 
+            {
+                piece = number - 90;
+                return "XC" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 50) 
+            {
+                piece = 50;
+                return "L" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 40) 
+            {
+                piece = 40;
+                return "XL" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 10) 
+            {
+                piece = number - 10;
+                return "X" + NumtoRomannumeral(piece);
+            }
+            if (number >= 9) 
+            {
+                piece = number - 9;
+                return "IX" + NumtoRomannumeral(piece);
+            }
+            if (number >= 5) 
+            {
+                piece = number - 5;
+                return "V" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 4) 
+            {
+                piece = number - 4;
+                return "IV" + NumtoRomannumeral(piece); 
+            }
+            if (number >= 1) 
+            {
+                piece = number - 1;
+                return "I" + NumtoRomannumeral(piece);
+            }
+            return string.Empty;
+        }
+    }
+}

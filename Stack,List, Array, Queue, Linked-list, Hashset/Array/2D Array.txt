@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Getting number of rows and column try enter [3,3]
+            Console.Write("Enter number of row: ");
+            int row = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of column: ");
+            int column = int.Parse(Console.ReadLine());
+
+            //Creating 2D array with user input row & column
+            int[,] numbers = new int[row,column];
+
+            //Getting values for array
+            for (int rows=0; rows<row;rows++) 
+            {
+                for (int cols=0; cols<column; cols++) 
+                {
+                    Console.Write("Enter element[{0},{1}]: ", rows,cols);
+                    numbers[rows,cols] = (int.Parse(Console.ReadLine()));
+                }
+            }
+            
+
+            //displaying 2D array
+            Console.WriteLine("\nvalue of an 2D array: ");
+            foreach (int x in numbers) 
+            {
+                Console.Write(x + " ");
+                if (x % 3 == 0) Console.WriteLine();
+            }
+
+            //Getting odd value from array
+            Console.WriteLine("\nOdd value of an 2D array: ");
+            foreach (int x in numbers) if(x%2==1)Console.Write(x+" ");
+
+            //Getting even value from array
+            Console.WriteLine("\nEven value of an 2D array: ");
+            foreach (int x in numbers) if (x % 2 == 0) Console.Write(x + " ");
+
+            Console.ReadKey(true);
+        }  
+    }
+}

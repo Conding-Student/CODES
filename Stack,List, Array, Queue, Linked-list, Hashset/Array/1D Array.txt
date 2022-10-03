@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Creating an single array
+            int[] numbers = new int[5];
+
+            //Getting values for array
+            for (int i=0; i<5;i++) 
+            {
+                Console.Write("Enter element[{0}]: ", i+1);
+                numbers[i] = (int.Parse(Console.ReadLine()));
+            }
+
+            //sorting in ascending order
+            Array.Sort(numbers);
+
+            //displaying sorted array
+            Console.WriteLine("\nSorted value of an array: ");
+            foreach (int x in numbers) Console.Write(x+" ");
+
+            //Getting odd value from array
+            Console.WriteLine("\nOdd value of an array: ");
+            foreach (int x in numbers) if(x%2==1)Console.Write(x+" ");
+
+            //Getting even value from array
+            Console.WriteLine("\nEven value of an array: ");
+            foreach (int x in numbers) if (x % 2 == 0) Console.Write(x + " ");
+
+            Console.ReadKey(true);
+        }  
+    }
+}
