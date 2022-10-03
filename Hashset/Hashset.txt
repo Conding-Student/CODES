@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            HashSet<int> numbers = new HashSet<int>();
+           
+            Console.WriteLine("===1st Hashset===");
+            for(int i=0;i<5; i++)
+            {
+                Console.Write("Enter element {0}: ",i+1);
+                numbers.Add(int.Parse(Console.ReadLine()));
+            }
+          
+            HashSet<int> numbers2 = new HashSet<int>();
+           
+            Console.WriteLine("\n===2nd Hashset===");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Enter element {0}: ", i + 1);
+                numbers2.Add(int.Parse(Console.ReadLine()));
+            }
+
+            HashSet<int> numbers3 = new HashSet<int>(numbers);
+
+            
+            numbers.UnionWith(numbers2);
+            numbers2.IntersectWith(numbers3);
+            numbers3.ExceptWith(numbers2);
+
+            Console.Write("\nUnion hashset: ");
+            foreach (int x in numbers) Console.Write(x+" ");
+            Console.Write("\nIntersect hashset: ");
+            foreach (int x in numbers2) Console.Write(x + " ");
+            Console.Write("\nSet Difference: ");
+            foreach (int x in numbers3) Console.Write(x + " ");
+
+            Console.ReadKey(true);
+        }
+
+        
+    }
+}
