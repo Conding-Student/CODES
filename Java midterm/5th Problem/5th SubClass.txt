@@ -1,0 +1,10 @@
+package Inheritance;
+
+public class Child extends Parent{
+
+	void introduce()
+	{
+		System.out.print("I am a Child class");		
+	}
+	
+}

@@ -1,0 +1,37 @@
+package encapsulation;
+
+public class Triangle {
+
+	//Global variables
+	private double side1,side2,side3;
+	
+	//Setting value for side 1
+	void setside1(double side1){
+		this.side1=side1;
+	}
+	
+	//Setting value for side 2
+	void setside2(double side2){
+		this.side2=side2;
+	}
+	
+	//Setting value for side 3
+	void setside3(double side3){
+		this.side3=side3;
+	}
+	
+	//getting value for side 1
+	double getside1 (){
+		return side1;
+	}
+	
+	//getting value for side 2
+	double getside2 (){
+		return side2;
+	}
+	
+	//getting value for side 3
+	double getside3 (){
+		return side3;
+	}		
+}

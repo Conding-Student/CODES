@@ -1,0 +1,42 @@
+package encapsulation;
+import java.util.*;
+public class Main_encapsulation {
+
+	public static void main(String[] args) {		
+		//Use to be able to read the user input
+		Scanner s = new Scanner(System.in);
+		
+		//Global variables
+		double side1, side2, side3,area,base=3,height=4;
+		
+		//Creating an object using class Student
+		Triangle sides = new Triangle();
+		
+		//Displaying question
+		System.out.print("Enter Side1 value: ");
+		
+		//Storing user input in setside1 method of class Triangle
+		sides.setside1(side1=s.nextDouble());
+		
+		//Displaying question
+		System.out.print("Enter Side2 value: ");
+		
+		//Storing user input in setside2 method of class Triangle
+		sides.setside2(side2=s.nextDouble());
+		
+		//Displaying question
+		System.out.print("Enter Side3 value: ");
+				
+		//Storing user input in setside3 method of class Triangle
+		sides.setside3(side3=s.nextDouble());
+		
+		//For spacing
+		System.out.println();
+		
+		//Displaying area
+		area = (sides.getside1()+sides.getside2()+sides.getside3())/2;
+		
+		//Displaying area of tringle
+		System.out.print(area);		
+	}		
+}

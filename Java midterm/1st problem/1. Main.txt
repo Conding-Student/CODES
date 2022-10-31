@@ -1,0 +1,36 @@
+package encapsulation;
+import java.util.*;
+public class Main_encapsulation {
+
+	public static void main(String[] args) {
+		
+		//Use to be able to read the user input
+		Scanner s = new Scanner(System.in);
+		
+		//Global variables
+		String name; int roll_no;
+		
+		//Creating an object using class Student
+		Student stud = new Student();
+		
+		//Displaying question
+		System.out.print("Enter student name: ");
+		
+		//Storing user input in setname method of class student
+		stud.setname(name=s.nextLine());
+		
+		//Displaying question
+		System.out.print("Enter Roll_No.: ");
+		
+		//Storing user input in setroll method of class student
+		stud.setroll_no(roll_no=s.nextInt());
+		
+		//For spacing
+		System.out.println();
+		
+		//Displaying both input of the user (name & Roll_no.)
+		System.out.println(stud.getname());
+		System.out.print(stud.getroll_no());
+		
+	}		
+}

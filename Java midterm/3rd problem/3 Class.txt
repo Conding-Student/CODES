@@ -1,0 +1,32 @@
+package encapsulation;
+
+public class Rectangle {
+
+	//Global variables
+	double lenght, width;
+	
+	//Construcor with zero parameter
+	Rectangle(){}
+	
+	//Construcor with 1 parameter
+	Rectangle(double number)
+	{
+		lenght=number;
+		width=number;		
+	}
+	
+	//Construcor with 2 parameters
+	Rectangle(double lenght, double width)
+	{
+		this.lenght=lenght;
+		this.width=width;		
+	}
+	
+	//Method to compute & display the area of rectangle
+	void area ()
+	{				
+		double area= width * lenght;		
+		System.out.print("Area is equal to: "+area);
+	}
+	
+}

@@ -1,0 +1,23 @@
+package encapsulation;
+
+public class Student {
+	private String name;
+	private int roll_no;
+	
+	void setname(String name){
+		this.name=name;
+	}
+	
+	void setroll_no(int roll_no){
+		this.roll_no=roll_no;
+	}
+	
+	String getname (){
+		return name;
+	}
+		
+	int getroll_no (){
+		return roll_no;
+	}
+
+}

@@ -1,0 +1,27 @@
+package encapsulation;
+import java.util.*;
+public class Main_encapsulation {
+
+	public static void main(String[] args) {		
+		//Use to be able to read the user input
+		Scanner s = new Scanner(System.in);
+		String name;
+		
+		
+		
+		//Displaying question and getting user input
+		System.out.print("Enter the student name: ");
+		name=s.nextLine();
+		
+		if(name != null)
+		{
+		//Creating object with 1 parameter
+		Student stud1 = new Student(name);
+		}
+		else
+		{
+		//Creating object with zero parameter
+		Student stud = new Student();
+		}		
+	}		
+}

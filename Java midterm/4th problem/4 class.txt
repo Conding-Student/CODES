@@ -1,0 +1,23 @@
+package encapsulation;
+
+public class Student {
+	
+	//Global Variables
+	String name="unknown";
+	
+	//Constructor with zero parameters
+	Student()
+	{
+		System.out.print(name);
+	}
+	
+	//Constructor with 1 parameter
+	Student(String name)
+	{
+		this.name=name;
+		System.out.print(name);
+	}
+	
+	
+
+}

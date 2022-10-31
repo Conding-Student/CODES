@@ -1,0 +1,19 @@
+package Inheritance;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//Creating a object using parent class
+		Parent Father = new Parent();
+		//Creating a object using Child class
+		Child son = new Child();
+		
+		//Calling method of Parent class using the Parent object
+		Father.introduce();
+		//Use for spacing
+		System.out.println();
+		//Calling method of Child class using the child object
+		son.introduce();
+	}
+}

@@ -1,0 +1,10 @@
+package Inheritance;
+
+public class Parent {
+
+	void introduce()
+	{
+		System.out.print("I am a parent class");		
+	}
+	
+}

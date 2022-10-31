@@ -1,0 +1,40 @@
+package encapsulation;
+import java.util.*;
+public class Main_encapsulation {
+
+	public static void main(String[] args) {		
+		//Use to be able to read the user input
+		Scanner s = new Scanner(System.in);
+		
+		//Global variables
+		double length, width, number;
+		
+		//Creating an object with zero parameter
+		Rectangle rectangle1 = new Rectangle();
+		
+		//Displaying area of 1st object
+		rectangle1.area();
+		
+		//Displaying question & getting user input
+		System.out.print("\n\nEnter a value for both lenght and width rectangle: ");
+		number=s.nextDouble();
+		
+		//Creating an object with 1 parameter
+		Rectangle rectangle2 = new Rectangle(number);
+		
+		//Displaying area of 1st object
+		rectangle2.area();
+				
+		//Displaying question & getting user input
+		System.out.print("\n\nEnter a value for lenght of rectangle: ");
+		length=s.nextDouble();
+		System.out.print("\nEnter a value for width of rectangle: ");
+		width=s.nextDouble();
+		
+		//Creating an object with 1 parameter
+		Rectangle rectangle3 = new Rectangle(length,width);
+		
+		//Displaying area of 1st object
+		rectangle3.area();
+	}		
+}
